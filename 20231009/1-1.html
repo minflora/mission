@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(n, num){
+                let answer;
+                switch (n){
+                    case 1:
+                        answer = 60*numChk(num);
+                        
+                    case 2:
+                        answer = 100*numChk(num)
+                        
+                    case 3:
+                        answer = 120*numChk(num)
+                        
+                }
+                return answer;
+            }
+            
+            function numChk(n){
+                let time
+                if(n === 1){
+                    time = n
+                }else if(2<=n && n <=5){
+                    time = 0.5
+                }else if(6<=n && n <=10){
+                    time = 0.25
+                }else if(11<=n && n <=20){
+                    time = 0.1
+                }else {
+                    time = 0.05
+                }
+                return time
+            }
+            console.log(solution(2,5));
+            console.log(solution(3,20));
+
+            
+        </script>
+    </body>
+</html>
