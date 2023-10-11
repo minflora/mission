@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(n){
+                let answer=0;
+                for(let i= 1; i<=n; i++){
+                    answer += i
+                }
+                return answer;
+            }
+            function whileSolution(n){
+                let answer =0;
+                i=0;
+                while(i<=n){
+                    answer +=i;
+                    i++
+                }
+                return answer;
+            }
+            console.log(solution(10));
+            console.log(whileSolution(6));
+
+            
+        </script>
+    </body>
+</html>
