@@ -8,17 +8,24 @@
             function solution(day, arr){
                 let answer=0;
                 let array = [];
-                console.log(arr)
-              arr.forEach(num =>{
-               array.push(num.toString()[1]) 
-              })
-              if(day == array
-                
+                //arr의 배열에서 array배열에 toString으로
+                // 숫자타입의 수를 1의자리숫자만 잘라서 배열에 추가
+                arr.forEach(num =>{
+                array.push(num.toString()[1]) 
+                })
+                //1의자리 숫자만 잘라진 배열에서 날짜와 비교해서 차량의 대수 갯수 추가
+                for(let i =0; i<array.length; i++){
+                    if(day == array[i]){
+                        answer++;
+                    }
+                    console.log(answer)
+                }
                 return answer;
             }
             
-            arr=[25, 23, 11, 47, 53, 17, 33];
-            console.log(solution(3, arr));
+            arr=[25, 23, 10, 47, 53, 17, 33];
+            console.log(solution(0, arr));
+            
         </script>
     </body>
 </html>
