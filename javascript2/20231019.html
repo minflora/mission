@@ -7,17 +7,15 @@
         <script>
             function solution(arr){         
                 let answer=[];
-                let num = arr.length
-                for(let i=0; i<num; i++){
-                    if(arr[i]>=num){
+                answer.push(arr[0])
+                for(let i=0; i<arr.length; i++){
+                    if(arr[i-1]<=arr[i]){
                         answer.push(arr[i])
                     }
                 }
-                console.log(answer);
                 return answer;
             }
-
-            let arr=[5,7,11,3,10,20,];
+            let arr=[7,3,9,5,6,12];
             console.log(solution(arr));
         </script>
     </body>
