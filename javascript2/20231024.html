@@ -12,37 +12,34 @@
           
           // 각 행의 합을 계산하고 최대 합 업데이트
           for (let i = 0; i < 5; i++) {
-            let rowSum = 0;
+            let row = 0;
             for (let j = 0; j < 5; j++) {
-              rowSum += arr[i][j];
+              row += arr[i][j];
             }
-            answer = Math.max(answer, rowSum);
+            answer = Math.max(answer, row);
           }
           
           // 각 열의 합을 계산하고 최대 합 업데이트
           for (let j = 0; j < 5; j++) {
-            let colSum = 0;
+            let col = 0;
             for (let i = 0; i < 5; i++) {
-              colSum += arr[i][j];
+              col += arr[i][j];
             }
-            answer = Math.max(answer, colSum);
+            answer = Math.max(answer, col);
           }
           
           // 주 대각선의 합을 계산하고 최대 합 업데이트
           let diagonalSum = 0;
           for (let i = 0; i < 5; i++) {
-            diagonalSum += arr[i][i];
+            diagonal += arr[i][i];
           }
-          console.log("주대각선의 합",diagonalSum)
-          answer = Math.max(answer, diagonalSum);
+          answer = Math.max(answer, diagonal);
           
-          diagonalSum = 0;
+          diagonal = 0;
           for (let i = 0; i < 5; i++) {
-            diagonalSum += arr[i][4 - i];
+            diagonal += arr[i][4 - i];
           }
-          console.log("부대각선의 합",diagonalSum)
-
-          answer = Math.max(answer, diagonalSum);
+          answer = Math.max(answer, diagonal);
         return answer;
     }
 
