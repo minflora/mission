@@ -6,27 +6,45 @@
     <body>
         <script>
             function solution(arr){  
-    let answer=Number.MIN_SAFE_INTEGER;
+  
+          // 최대 합을 저장할 변수 초기화
+          let answer = 0;
+          
+          // 각 행의 합을 계산하고 최대 합 업데이트
+          for (let i = 0; i < 5; i++) {
+            let rowSum = 0;
+            for (let j = 0; j < 5; j++) {
+              rowSum += arr[i][j];
+            }
+            answer = Math.max(answer, rowSum);
+          }
+          
+          // 각 열의 합을 계산하고 최대 합 업데이트
+          for (let j = 0; j < 5; j++) {
+            let colSum = 0;
+            for (let i = 0; i < 5; i++) {
+              colSum += arr[i][j];
+            }
+            answer = Math.max(answer, colSum);
+          }
+          
+          // 주 대각선의 합을 계산하고 최대 합 업데이트
+          let diagonalSum = 0;
+          for (let i = 0; i < 5; i++) {
+            diagonalSum += arr[i][i];
+          }
+          console.log("주대각선의 합",diagonalSum)
+          answer = Math.max(answer, diagonalSum);
+          
+          diagonalSum = 0;
+          for (let i = 0; i < 5; i++) {
+            diagonalSum += arr[i][4 - i];
+          }
+          console.log("부대각선의 합",diagonalSum)
 
-    let n=arr.length;
-    let sum1 = []
-    let sum2=0;
-    //각행의 합
-   const add = arr => arr.reduce((a,b) => a+b)
-   for(let i=0; i<arr[0].length; i++){
-    sum1.push(add(arr[i]))
-   }
-    //새로의 합
-    for(let i=0; i<arr[0].length; i++){
-     sum2.push(arr[i])
-        for(let j=0; i<arr[0].length; j++){
-            console.log(arr[i][j])     
-        }
-        console.log(sum2);
+          answer = Math.max(answer, diagonalSum);
+        return answer;
     }
-
-    return answer;
-}
 
             let arr=[[10, 13, 10, 12, 15], 
                      [12, 39, 30, 23, 11],
