@@ -1,0 +1,22 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+</head>
+
+<body>
+    <script>
+        function solution(s) {
+            let answer = "YES";
+            let low = s.toLowerCase();
+            const spliteString = low.split("");
+            const reverseString = spliteString.reverse().join("")
+
+            if (low === reverseString) {
+                return answer
+            } else {
+                return "NO"
+            }
+        }
+    </script>
